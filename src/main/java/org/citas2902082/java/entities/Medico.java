@@ -1,24 +1,47 @@
 package org.citas2902082.java.entities;
+
 import org.citas2902082.java.entities.enums.*;
 
-public class Medico {
+public class Medico extends Usuario {
 
-    public Integer id;
-    public String nombres;
-    public String apellidos;
-    public TipoIdentificacion tipoIdentificacion;
-    public Integer numeroIdentifacion;
-    public Integer registroMedico;
-    public Especialidad especialidad;
+    private Long registroMedico;
+    private Especialidad especialidad;
 
-    //constructor
-    public Medico(String nombres, String apellidos, TipoIdentificacion tipoIdentificacion, Integer numeroIdentifacion,
-            Integer registroMedico, Especialidad especialidad) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.tipoIdentificacion = tipoIdentificacion;
-        this.numeroIdentifacion = numeroIdentifacion;
+    // constructor parametrizado
+    public Medico(Integer id, String nombres, String apellidos, TipoIdentificacion tipoIdentificacion,
+            Long numeroIdentificacion, Long registroMedico, Especialidad especialidad) {
+
+        // constructor de la clase padre
+        super(id, nombres, apellidos, tipoIdentificacion, numeroIdentificacion);
         this.registroMedico = registroMedico;
         this.especialidad = especialidad;
     }
+
+    public Long getRegistroMedico() {
+        return registroMedico;
+    }
+
+    public void setRegistroMedico(Long registroMedico) {
+        this.registroMedico = registroMedico;
+    }
+
+    public Especialidad getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    @Override
+    public String toString() {
+        return 
+        super.toString() +
+        "Medico [registroMedico=" + registroMedico + ", especialidad=" + especialidad + "]";
+    }
+
+
+    
+    
+
 }

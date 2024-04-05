@@ -12,11 +12,13 @@ public class CitaEnfermero extends Cita implements IAgendable {
 
 
 
-    public CitaEnfermero(LocalDateTime fecha,
+    
+    public CitaEnfermero( Integer id,
+        LocalDateTime fecha,
                          Paciente paciente,
                          String procedimiento,
                           Enfermero enfermero) {
-        super(fecha, paciente);
+        super(id,fecha, paciente);
         this.procedimiento = procedimiento;
         this.enfermero = enfermero;
     }
@@ -43,6 +45,27 @@ public class CitaEnfermero extends Cita implements IAgendable {
 
     public void setEnfermero(Enfermero enfermero) {
         this.enfermero = enfermero;
+    }
+
+
+
+
+    //implementadas de  ia agendable
+    @Override
+    public void agendarCita(LocalDateTime fecha) {
+       super.setFecha(fecha);
+    }
+
+
+    @Override
+    public void cancelarCita() {
+        System.out.println("CITA  DE ENFERMERIA CANCELADA");
+    }
+
+
+    @Override
+    public void reAgendarCita(LocalDateTime fecha) {
+        super.setFecha(fecha);
     }
 
 

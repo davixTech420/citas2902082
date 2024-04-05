@@ -3,12 +3,15 @@ package org.citas2902082.java.entities;
 import org.citas2902082.java.entities.Paciente;
 
 public class Cita {
+    protected Integer id;
     private LocalDateTime fecha;
     private Paciente paciente;
+    private Consultorio consultorio;
 
 
     //constructor
-    public Cita(LocalDateTime fecha, Paciente paciente) {
+    public Cita(Integer id, LocalDateTime fecha, Paciente paciente) {
+        this.id = id;
         this.fecha = fecha;
         this.paciente = paciente;
     }
@@ -34,8 +37,17 @@ public class Cita {
         this.paciente = paciente;
     }
 
-    
 
+    public Consultorio getConsultorio() {
+        return consultorio;
+    }
+
+
+    public void setConsultorio(Consultorio consultorio) {
+        this.consultorio = consultorio;
+    }
+
+    
 
     
     
